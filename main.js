@@ -1,15 +1,14 @@
 const dotenv = require('dotenv');
 const fs = require('fs');
-const message = require('./modules/message'); 
+const NameNum = require('./modules/message'); 
 
 // .env ファイルから環境変数を読み込む
 dotenv.config();
 
-// message モジュールの create メソッドを実行し、結果を取得
-const name = process.env.NAME; 
-const number = process.env.NUMBER; 
-const resultMessage = message.create(name, number);
-
+// NameNum モジュールの create メソッドを実行し、結果を取得
+const name = process.env.NAME;
+const number = process.env.NUMBER;
+const resultMessage = NameNum.create(name, number); 
 
 fs.writeFile('message.txt', resultMessage, (err) => {
   if (err) {
